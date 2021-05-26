@@ -1,6 +1,6 @@
 pipeline {
-    
-    agent { label params['agent-name'] } 
+
+    agent { label 'aws-slave' } 
 
     parameters{
         agentParameter name:'agent-name'
@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage("Run index file"){
             steps {
-                sh node index.js
+                sh 'node index.js'
             }
         }
     }
